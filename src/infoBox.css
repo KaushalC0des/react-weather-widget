@@ -1,0 +1,315 @@
+/* .InfoBox {
+    text-align: center;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+.InfoBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    padding: 5px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-container {
+    perspective: 1000px;
+}
+
+.weather-card {
+    max-width: 360px;
+    border-radius: 18px !important;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 
+                0 5px 12px rgba(0, 0, 0, 0.1) !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2), 
+                0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.image-wrapper {
+    position: relative;
+    height: 110px;
+    overflow: hidden;
+}
+
+.weather-image {
+    height: 100% !important;
+    transition: transform 0.5s ease;
+}
+
+.weather-card:hover .weather-image {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(102, 126, 234, 0.4) 100%);
+    pointer-events: none;
+}
+
+.weather-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 16px 20px !important;
+    position: relative;
+}
+
+.location-section {
+    margin-bottom: 12px;
+    text-align: center;
+    animation: slideInLeft 0.6s ease-out 0.2s both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.city-name {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    color: white !important;
+    margin-bottom: 3px !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.3px;
+}
+
+.weather-description {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 0.8rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-transform: capitalize;
+    font-weight: 300 !important;
+    letter-spacing: 0.5px;
+}
+
+.temperature-section {
+    text-align: center;
+    margin: 12px 0;
+    animation: scaleIn 0.6s ease-out 0.3s both;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.main-temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    position: relative;
+}
+
+.weather-icon {
+    font-size: 2.2rem !important;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.sun-icon {
+    color: #FFD700 !important;
+    animation: rotate 20s linear infinite, float 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cold-icon {
+    color: #B0E0E6 !important;
+}
+
+.rain-icon {
+    color: #87CEEB !important;
+}
+
+.cloud-icon {
+    color: #E8E8E8 !important;
+}
+
+.temp-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.temp-unit {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 6px;
+}
+
+.feels-like {
+    font-family: 'Poppins', sans-serif !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.75rem !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.3px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideInUp 0.6s ease-out 0.4s both;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 6px 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.stat-icon {
+    font-size: 1.2rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-bottom: 1px;
+}
+
+.stat-content {
+    text-align: center;
+}
+
+.stat-label {
+    font-family: 'Poppins', sans-serif !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.6rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: 500 !important;
+}
+
+.stat-value {
+    font-family: 'Poppins', sans-serif !important;
+    color: white !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    margin-top: 1px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .weather-card {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .city-name {
+        font-size: 1.8rem !important;
+    }
+
+    .temp-value {
+        font-size: 4rem;
+    }
+
+    .temp-unit {
+        font-size: 1.5rem;
+    }
+
+    .weather-icon {
+        font-size: 2.8rem !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-item {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .stat-content {
+        text-align: left;
+    }
+}

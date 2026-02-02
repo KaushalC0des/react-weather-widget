@@ -1,3 +1,123 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 .SearchBox {
-    text-align: center;
+    margin: 8px auto 10px;
+    max-width: 420px;
+    padding: 0 15px;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.SearchBox form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.SearchBox form:hover {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.search-input-wrapper {
+    position: relative;
+}
+
+.search-input {
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-input .MuiOutlinedInput-root {
+    border-radius: 12px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.search-input .MuiOutlinedInput-root:hover {
+    background: #f8f9fa;
+}
+
+.search-input .MuiOutlinedInput-root.Mui-focused {
+    background: white;
+}
+
+.search-input .MuiInputLabel-root {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.search-input .MuiOutlinedInput-notchedOutline {
+    border-color: #e0e0e0;
+    border-width: 2px;
+}
+
+.search-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #667eea;
+}
+
+.search-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #667eea;
+    border-width: 2px;
+}
+
+.search-input .MuiFormHelperText-root {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.search-button {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 10px 24px !important;
+    border-radius: 10px !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    letter-spacing: 0.3px !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 3px 12px rgba(102, 126, 234, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.search-button:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .SearchBox {
+        padding: 0 15px;
+    }
+
+    .SearchBox form {
+        padding: 24px 20px;
+    }
+
+    .search-button {
+        padding: 12px 24px !important;
+        font-size: 0.95rem !important;
+    }
 }
